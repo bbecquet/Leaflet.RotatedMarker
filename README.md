@@ -3,7 +3,7 @@ Leaflet Rotated Marker
 
 Enables rotation of marker icons in Leaflet.
 
-Compatible with versions 0.7.* and 1.* of Leaflet. Doesn't work on IE < 10.
+Compatible with versions 0.7.* and 1.* of Leaflet. Doesn't work on IE < 9.
 
 Usage
 ---
