@@ -6,7 +6,11 @@
     var oldIE = (L.DomUtil.TRANSFORM === 'msTransform');
 
     L.Marker.addInitHook(function () {
-        this.options.rotationOrigin = this.options.rotationOrigin || 'center bottom' ;
+        var iconAnchor = this.options.icon.options.iconAnchor;
+        if (iconAnchor) {
+            iconAnchor = (iconAnchor[0] + 'px ' + iconAnchor[1] + 'px');
+        }
+        this.options.rotationOrigin = this.options.rotationOrigin || iconAnchor || 'center bottom' ;
         this.options.rotationAngle = this.options.rotationAngle || 0;
     });
 
