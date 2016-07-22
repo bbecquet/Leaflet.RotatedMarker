@@ -27,7 +27,7 @@
 
                 if(oldIE) {
                     // for IE 9, use the 2D rotation
-                    this._icon.style[L.DomUtil.TRANSFORM] = ' rotate(' + this.options.rotationAngle + 'deg)';
+                    this._icon.style[L.DomUtil.TRANSFORM] = 'rotate(' + this.options.rotationAngle + 'deg)';
                 } else {
                     // for modern browsers, prefer the 3D accelerated version
                     this._icon.style[L.DomUtil.TRANSFORM] += ' rotateZ(' + this.options.rotationAngle + 'deg)';
