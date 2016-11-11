@@ -1,6 +1,6 @@
 {
     "name": "leaflet-rotatedmarker",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Enables rotation of marker icons in Leaflet.",
     "main": "leaflet.rotatedMarker.js",
     "repository": {
