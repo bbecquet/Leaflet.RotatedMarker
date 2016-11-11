@@ -27,7 +27,10 @@
                 ]
             });
 
-            var m = L.marker(map.getCenter(), {rotationAngle: 45}).addTo(map);
+            var m = L.marker(map.getCenter(), {
+                rotationAngle: 45,
+                draggable: true
+            }).addTo(map);
         };
     </script>
     </head>
