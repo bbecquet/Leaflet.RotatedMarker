@@ -2,7 +2,6 @@
     // save these original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
     var proto_setPos = L.Marker.prototype._setPos;
-    var proto_onDrag = L.Handler.MarkerDrag.prototype._onDrag;
 
     var oldIE = (L.DomUtil.TRANSFORM === 'msTransform');
 
@@ -14,6 +13,9 @@
         }
         this.options.rotationOrigin = this.options.rotationOrigin || iconAnchor || 'center bottom' ;
         this.options.rotationAngle = this.options.rotationAngle || 0;
+
+        // Ensure marker keeps rotated during dragging
+        this.on('drag', function(e) { e.target._applyRotation(); });
     });
 
     L.Marker.include({
@@ -52,11 +54,4 @@
             return this;
         }
     });
-
-    L.Handler.MarkerDrag.include({
-        _onDrag: function (e) {
-            proto_onDrag.call(this, e);
-            this._marker._applyRotation();
-        }
-    })
 })();
