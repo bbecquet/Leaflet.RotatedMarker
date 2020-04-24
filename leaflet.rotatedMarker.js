@@ -1,4 +1,19 @@
-(function() {
+(function (factory) {
+    var L;
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['leaflet'], factory);
+    } else if (typeof module === 'object' && typeof module.exports === "object") {
+        // Node/CommonJS
+        L = require('leaflet');
+        module.exports = factory(L);
+    } else {
+        // Browser globals
+        if (typeof window.L === 'undefined')
+            throw 'Leaflet must be loaded first';
+        factory(window.L);
+    }
+}(function (L) {
     // save these original methods before they are overwritten
     var proto_initIcon = L.Marker.prototype._initIcon;
     var proto_setPos = L.Marker.prototype._setPos;
@@ -54,4 +69,4 @@
             return this;
         }
     });
-})();
+}));
