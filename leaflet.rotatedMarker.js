@@ -29,7 +29,7 @@
         },
 
         _applyRotation: function () {
-            if(this.options.rotationAngle) {
+            if(this._icon && this.options.rotationAngle) {
                 this._icon.style[L.DomUtil.TRANSFORM+'Origin'] = this.options.rotationOrigin;
 
                 if(oldIE) {
